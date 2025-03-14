@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/*����ü�� �̿��ؼ� ����� ���� �Է�*/
+/*Section of Information By Using Structure*/
 struct Member
 {
 	string group;
@@ -11,7 +11,7 @@ struct Member
 	string birthday;
 };
 
-/*�ʿ��� ���� ����*/
+/*Variation Declaration*/
 int number, average, member;
 int age;
 int sum = 0;
@@ -19,7 +19,7 @@ string name;
 string isTrue = "TRUE";
 string ans;
 
-/*MAIN�Լ����� ����� �ٸ� �Լ� ����*/
+/*Function Declaration*/
 int getAverageage(int member);
 void output_information();
 void print_member(Member member);
@@ -28,26 +28,26 @@ int checkAverageage(string ans);
 int main()
 { 
 	cout << "*****************************************************************" << endl;
-	cout << "                      �̸��� �Է��ϼ���                          " << endl;
+	cout << "                        Enter the name                           " << endl;
 	cout << "*****************************************************************" << endl;
 	cout << " " << endl;
-	cout << "�̸�: ";
+	cout << "NAME: ";
 	cin >> name;
 
 	output_information();
 
-	if (isTrue == "FALSE")//����ڿ� ��ϵ��� ���� ����� �Է½� �ٷ� ����
+	if (isTrue == "FALSE")//If the name didn't exist in database
 	{
 		return 0;
 	}
 
-	/*�׷��� ���� ����� ���ϰ� ������ ����� ����*/
+	/*Check wheter they will find average or not*/
 	cout << " " << endl;
 	cout << "*****************************************************************" << endl;
-	cout << "    �ش� �׷��� ���� ����� ���ϰ� �����Ű���? (�� / �ƴϿ�)     " << endl;
+	cout << "    Do you want to calcuate an average of their age? (Yes / No)     " << endl;
 	cout << "*****************************************************************" << endl; \
 		cout << " " << endl;
-	cout << "���: ";
+	cout << "AVERAGE: ";
 	cin >> ans;
 
 	return checkAverageage(ans);
@@ -55,38 +55,38 @@ int main()
 	return 0;
 }
 
-/*����� ���� �Է��Ͽ� ����� ������ ����� ���ϴ� �Լ�*/
+/*Calculating Average Function*/
 int getAverageage(int member)
 {
-	for (number = 0; number != member; number++)//��� ���� �°� for�� ������
+	for (number = 0; number != member; number++)//Calculate all memebers' age
 	{
-		cout << "[" << number + 1 << "��° ����� ���̸� �Է��Ͻÿ�] : ";
+		cout << "[Enter a" << number + 1 << "th member's age : ";
 		cin >> age;
 		sum += age;
 	}
-	average = sum / member; //�� ���� ������� ������
+	average = sum / member; //Calcuate an average
 	
 	cout << " " << endl;
 	cout << "*****************************************************************" << endl;
-	cout << "                               ���                              " << endl;
+	cout << "                               Result                            " << endl;
 	cout << "*****************************************************************" << endl;
 	cout << " " << endl;
-	cout << "* �ش� �׷��� ��� ���̴� " << "'" << average << "'" << " �Դϴ�." << endl;
-	return 0; //���� average���� ��ȯ�Ѵ�.
+	cout << "* Their average age is " << "'" << average << "'" << endl;
+	return 0; //Return the final average age
 
 }
 
-/*����ڰ� ���ϴ� �׷��� ������� �Է�*/
+/*Enter the number what you want to know*/
 int checkAverageage(string ans) 
 {
-	if (ans == "��")
+	if (ans == "Yes")
 	{
 		cout << " " << endl;
 		cout << "*****************************************************************" << endl;
-		cout << "                       ������� �Է��ϼ���.                      " << endl;
+		cout << "                       Enter a number of member                  " << endl;
 		cout << "*****************************************************************" << endl;
 		cout << " " << endl;
-		cout << "�����: " ;
+		cout << "NUMBER_OF_MEMBER: " ;
 		cin >> member;
 		cout << " " << endl;
 		
@@ -95,149 +95,149 @@ int checkAverageage(string ans)
 		cout << " " << endl;
 		cout << "*****************************************************************" << endl;
 		cout << " " << endl;
-		cout << "* �̿��� �ּż� �����մϴ�. *";
+		cout << "* THANK YOU *";
 		cout << " " << endl;
 	}
 	else  
 	{
 		cout << " " << endl;
-		cout << "* �̿��� �ּż� �����մϴ�. *";
+		cout << "* THANK YOU *";
 		cout << " " << endl;
 		return 0;
 	}
 }
 
 
-/*����ü�� �ִ� �������� ����ϴ� �Լ�*/
+/*Print information in sturcture*/
 void print_member(Member member)
 {	
 	cout << "\n";
-	cout << "[�������] : " << member.birthday << endl;
-	cout << "[�׷�] : " << member.group << endl;
-	cout << "[�Ҽӻ�] : " << member.agency << endl;
-	cout << "[���߳�¥] : " << member.debut << endl;
+	cout << "[BIRTHDAY] : " << member.birthday << endl;
+	cout << "[GROUP] : " << member.group << endl;
+	cout << "[AGENCY] : " << member.agency << endl;
+	cout << "[DEBUTDATE] : " << member.debut << endl;
 	cout << "[MBTI] : " << member.mbti << endl;
 }
 
-/*������� ���� �Լ�*/
+/*Information Function�*/
 void output_information()
 {
-	Member doyeon = { "���̿�����,��Ű��Ű","��Ÿ����","5�� 4��", "ESTJ" ,"1999�� 12�� 4��" }; // ����� ���� �Է°�
-	Member sejeong = { "���̿�����","�����ǽ�","5�� 4��","INTP","1996�� 8�� 28��" };
-	Member yoojung = { "���̿�����,��Ű��Ű","��Ÿ����","5�� 4��","INFP","1999�� 11�� 12��" };
-	Member chungha = { "���̿�����","M&H","5�� 4��","????","1996�� 2�� 9��" };
-	Member nayoung = { "���̿�����","SUBLIME","5�� 4��","ESFJ","1995�� 12�� 18��" };
-	Member chaeyeon = { "���̿�����","POCKETDOL STUDIO","5�� 4��","ISFJ","1997�� 12�� 1��" };
-	Member kyulkyung = { "���̿�����","�������� ��Ʃ���","5�� 4��","????","1998�� 12�� 16��" };
-	Member sohye = { "���̿�����","S&P","5�� 4��","ENFP","1999�� 7�� 19��" };
-	Member yeonjung = { "���̿�����,���ּҳ�","��Ÿ��","5�� 4��","ISTP","1999�� 8�� 3��" };
-	Member mina = { "���̿�����","�����ǽ�","5�� 4��","INFP","1999�� 12�� 4��" };
-	Member somi = { "���̿�����","THE BLACK LABEL","5�� 4��","ENFP","2001�� 3�� 9��" };
-	Member suyeon = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","ISFJ","1997�� 4�� 20��" };
-	Member elly = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","ESFP","1998�� 7�� 20��" };
-	Member sei = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","INFJ","2000�� 1�� 7��" };
-	Member lua = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","????","2000�� 10�� 6��" };
-	Member rina = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","????","2001�� 9�� 27��" };
-	Member lucy = { "��Ű��Ű","��Ÿ����","2017�� 8�� 8��","????","2002�� 8�� 31��" };
+	Member doyeon = { "IOI,WEKIMEKI","FANTAGIO","4TH MAY", "ESTJ" ,"04121999" }; // User Information
+	Member sejeong = { "IOI","JELLYFISH","4TH MAY","INTP","28081996" };
+	Member yoojung = { "IOI,WEKIMEKI","FANTAGIO","4TH MAY","INFP","12111999" };
+	Member chungha = { "IOI","M&H","4TH MAY","????","09021996" };
+	Member nayoung = { "IOI","SUBLIME","4TH MAY","ESFJ","18121995" };
+	Member chaeyeon = { "IOI","POCKETDOL STUDIO","4TH MAY","ISFJ","01121997" };
+	Member kyulkyung = { "IOI","???????","4TH MAY","????","16121998" };
+	Member sohye = { "IOI","S&P","4TH MAY","ENFP","19071999" };
+	Member yeonjung = { "IOI,WJSN","STARSHIP","4TH MAY","ISTP","03081999" };
+	Member mina = { "IOI","JELLYFISH","4TH MAY","INFP","04121999" };
+	Member somi = { "IOI","THE BLACK LABEL","4TH MAY","ENFP","09032001" };
+	Member suyeon = { "WEKIMEKI","FANTAGIO","8TH AUG","ISFJ","20041997" };
+	Member elly = { "WEKIMEKI","FANTAGIO","8TH AUG","ESFP","120071998" };
+	Member sei = { "WEKIMEKI","FANTAGIO","8TH AUG","INFJ","07012000" };
+	Member lua = { "WEKIMEKI","FANTAGIO","8TH AUG","????","06102000" };
+	Member rina = { "WEKIMEKI","FANTAGIO","8TH AUG","????","27092001" };
+	Member lucy = { "WEKIMEKI","FANTAGIO","28TH AUG","????","31082002" };
 
-	/*�Է°��� ���� ���� ���*/
-	if (name == "�赵��")
+	/*Print according to insert value*/
+	if (name == "Kimdoyeon" or name == "KIMDOYEON" or name == "Doyeon" or name == "DOYEON")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(doyeon);
 	}
-	else if (name == "�輼��")
+	else if (name == "Kimsejeong" or name == "KIMSEJEONG" or name == "Sejeong" or name == "SEJEONG")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(sejeong);
 	}
-	else if (name == "������")
+	else if (name == "Choiyoojung" or name == "CHOIYOOJUNG" or name == "Yoojung" or name == "YOOJUNG")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(yoojung);
 	}
-	else if (name == "��û��")
+	else if (name == "Kimchungha" or name == "KIMCHUNGHA" or name == "Chungha" or name == "CHUNGHA")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(chungha);
 	}
-	else if (name == "�ӳ���")
+	else if (name == "Limnayoung" or name == "LIMNAYOUNG" or name == "Nayoung" or name == "NAYOUNG")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(nayoung);
 	}
-	else if (name == "��ä��")
+	else if (name == "Jungchaeyeon" or name == "JUNGCHAEYEON" or name == "Chaeyeon" or name == "CHAEYEON")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(chaeyeon);
 	}
-	else if (name == "�ְ��")
+	else if (name == "Zukyulkyung" or name == "ZUKYULKYUNG" or name == "Kyulkyung" or name == "KYULKYUNG")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(kyulkyung);
 	}
-	else if (name == "�����")
+	else if (name == "Kimsohye" or name == "KIMSOHYE" or name == "Sohye" or name == "SOHYE")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(sohye);
 	}
-	else if (name == "������")
+	else if (name == "Youyeonjung" or name == "YOUYEONJUNG" or name == "Yeonjung" or name == "YEONJUNG")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(yeonjung);
 	}
-	else if (name == "���̳�")
+	else if (name == "Kangmina" or name == "KANGMINA" or name == "Mina" or name == "MINA")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(mina);
 	}
-	else if (name == "���ҹ�")
+	else if (name == "Jeonsomi" or name == "JEONSOMI" or name == "Somi" or name == "SOMI")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(somi);
 	}
-	else if (name == "������")
+	else if (name == "Jisuyeon" or name == "JISUYEON" or name == "Suyeon" or name == "SUYEON")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(suyeon);
 	}
-	else if (name == "����")
+	else if (name == "Elly" or name == "ELLY" )
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(elly);
 	}
-	else if (name == "����")
+	else if (name == "Sei" or name == "SEI")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(sei);
 	}
-	else if (name == "���")
+	else if (name == "Lua" or name == "LUA")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(lua);
 	}
-	else if (name == "����")
+	else if (name == "Rina" or name == "RINA")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
 		print_member(rina);
 	}
-	else if (name == "���")
+	else if (name == "Lucy" or name == "LUCY")
 	{
 		cout << "\n";
 		cout << "[" << name << "]" << endl;
@@ -247,8 +247,9 @@ void output_information()
 	{
 		cout << "\n";
 		cout << "*****************************************************************" << endl;
-		cout << "        �߸� �Է��ϼ̽��ϴ�. ��ϵ� ����ڸ� �Է����ּ���.       " << endl;
+		cout << "     YOU ENTER WRONG. PLEASE ENTER THE USER WHO IS ALLOCATED     " << endl;
 		cout << "*****************************************************************" << endl;
 		isTrue = "FALSE";
 	}
+
 }
